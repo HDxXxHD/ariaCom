@@ -13,11 +13,12 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('cat_name');
             $table->text('Desc');
-            $table->string('cat_photo')->default('nophoto.png');
+            $table->string('cat_photo')->default('nophoto.png')->nullable();
             $table->timestamps();
         });
     }

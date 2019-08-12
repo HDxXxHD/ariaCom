@@ -22,6 +22,8 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'type' => $faker->randomElement($array = array ('admin','user','author')),
+        'user_photo' => $faker->imageUrl,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
@@ -43,6 +45,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'category_id' => rand(1,10),
         'user_id' => rand(1,10),
         'comment_id' => rand(1,10),
+        'pro_title' => $faker->name,
         'pro_desc' => $faker->paragraph,
         'pro_brand' => $faker->company,
         'pro_origin' => $faker->cityPrefix,

@@ -16,8 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('category_id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->integer('comment_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('comment_id')->unsigned()->nullable();
             $table->string('pro_title')->nullable();
             $table->text('pro_desc')->nullable();
             $table->string('pro_brand')->nullable();
@@ -29,7 +29,7 @@ class CreateProductsTable extends Migration
             $table->string('pro_incoterms')->nullable();
             $table->text('pro_payType')->nullable();
             $table->string('pro_color')->nullable();
-            $table->string('pro_photo')->default('noproduct.png');
+            $table->string('pro_photo' , 255)->default('noproduct.png')->nullable();
             $table->timestamps();
         });
     }

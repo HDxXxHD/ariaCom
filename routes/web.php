@@ -17,9 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/panel', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index');
 Route::get('/product' , 'ProductController@all_product');
-Route::get('{path}', 'HomeController@index')->where('path', '([A-z\d-\/_.]+)?');
+Route::post('/saveproduct' , 'ProductController@save_product');
+Route::get('/product/{id}' , 'ProductController@edit_product');
+Route::get('/delete/{id}' , 'ProductController@delete_product');
+Route::post('/uploadckeditor' , 'ProductController@ckUpload');
+Route::post('/update/{id}' , 'ProductController@update_product');
+// Route::get('{path}', 'HomeController@index')->where('path', '([A-z\d-\/_.]+)?');
 
 
 

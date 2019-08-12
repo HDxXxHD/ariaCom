@@ -89,13 +89,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview" style="display: none;">
               <li class="nav-item">
-                <router-link to="/products" class="nav-link">
+                <router-link to="/product-list" class="nav-link">
                   <i class="fas fa-users-cog nav-icon"></i>
                       <p>Products List</p>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/categories" class="nav-link">
+                <router-link to="/category-list" class="nav-link">
                   <i class="fas fa-users-cog nav-icon"></i>
                       <p>Categories</p>
                 </router-link>
@@ -139,9 +139,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="content-wrapper">
   
     <div class="content">
-      <div class="container-fluid">
+      <div class="container-fluid pt-5">
         <div class="row">
-          <router-view></router-view>
+          <admin-mian></admin-mian>  
+          <vue-progress-bar></vue-progress-bar>
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -149,8 +150,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-
+  
+  
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
